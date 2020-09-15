@@ -15,6 +15,6 @@ router.get('', callback);
 router.post('', callback);
 router.put('', callback);
 router.delete('', callback);
-router.option('', callback);
+router.options('', callback);
 
 module.exports = router;
