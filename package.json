@@ -12,10 +12,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.15.2",
+    "volleyball": "^1.5.1",
     "helmet": "^4.1.1"
-  },
-  "devDependencies": {
-    "volleyball": "^1.5.1"
   },
   "repository": {
     "type": "git",
