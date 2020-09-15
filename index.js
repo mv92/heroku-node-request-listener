@@ -3,13 +3,16 @@ const cors = require('cors');
 const helmet = require('helmet');
 const volleyball = require('volleyball');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, NODE_ENV = '' } = process.env;
 
 // ERROR HANDLING
 const errorHandler = (err, req, res, next) => {
   if (res.headersSent) return next(err);
 
-  console.error(err.stack);
+  if (req.headers && req.headers.host.includes('localhost:')) {
+    console.error(err.stack);
+  }
+
   res.status(500).json(err);
 };
 let listenCallback = () => {};
@@ -30,4 +33,8 @@ app.use('/', require(__dirname + '/routes/index'));
 // ERROR Handling middleware
 app.use(errorHandler);
 
-app.listen(PORT, () => {});
+app.listen(PORT, () => {
+  if (process.env.NODE_ENV) {
+    console.log(`Listens on port: ${PORT}`);
+  }
+});

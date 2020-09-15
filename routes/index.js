@@ -18,7 +18,7 @@ const callback = (req, res, next) => {
     },
   } = object;
 
-  if (headers.host === 'localhost:5000') {
+  if (headers.host.includes('localhost:')) {
     console.log(object);
   };
 
@@ -32,10 +32,11 @@ const callback = (req, res, next) => {
   });
 };
 
-router.get('', callback);
-router.post('', callback);
-router.put('', callback);
-router.delete('', callback);
-router.options('', callback);
+router.get('/:id*?/:action*?', callback);
+router.post('/:id*?/:action*?', callback);
+router.put('/:id*?/:action*?', callback);
+router.delete('/:id*?/:action*?', callback);
+router.patch('/:id*?/:action*?', callback);
+router.options('/:id*?/:action*?', callback);
 
 module.exports = router;
