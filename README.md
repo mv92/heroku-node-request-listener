@@ -1,15 +1,18 @@
-### How to start the listener
+## How to start the listener
 
-##### This listener requires for the `heroku`, `node`, `npm` and `git` commands to work correctly.
+I delegated writing of the commit messages to `git commit -m "$(curl -s http://whatthecommit.com/index.txt)"` so please, no judging!
+
+#### This listener requires for the `heroku`, `node`, `npm` and `git` commands to work correctly.
 
 #### Main commands
+
 - Apps status `heroku ps`
 - Start the app `heroku ps:scale web=1`
 - Stop the app `heroku ps:scale web=0`
 - Alternative temporary stop `heroku ps:stop web`
 - Run the app locally `heroku local web`
 
-#### Handful of instructions from the [official Heroku documentation](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
+### Handful of instructions from the [official Heroku documentation](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
 
 - have a free [Heroku account](https://signup.heroku.com/signup/dc)
 
