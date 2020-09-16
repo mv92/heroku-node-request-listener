@@ -3,9 +3,10 @@
 ##### This listener requires for the `heroku`, `node`, `npm` and `git` commands to work correctly.
 
 #### Main commands
+- Apps status `heroku ps`
 - Start the app `heroku ps:scale web=1`
 - Stop the app `heroku ps:scale web=0`
-- Apps status `heroku ps`
+- Alternative temporary stop `heroku ps:stop web`
 - Run the app locally `heroku local web`
 
 #### Handful of instructions from the [official Heroku documentation](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
