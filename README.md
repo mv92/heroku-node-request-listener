@@ -12,17 +12,17 @@
 
 - have a free [Heroku account](https://signup.heroku.com/signup/dc)
 
-- `heroku` cli
-  - `brew install heroku/brew/heroku` install
-  - `heroku login` log in
+- Heroku cli
+  - `brew install heroku/brew/heroku`
+  - `heroku login`
 
 - Prepare the app
-  - `git git@github.com:mv92/heroku-node-request-listener.git` Clone the repo
+  - `git clone git@github.com:mv92/heroku-node-request-listener.git` Clone the repo
   - `cd heroku-node-request-listener` Enter the directory
-  - `web: node index.js` Update the `Procfile` file to match your starting command
 
 - Deploy the app
   - `heroku create` Create an app on Heroku and prepares it to receive your source code
+  - `web: node index.js` Update the `Procfile` file to match your starting command
   - `git push heroku main` Deploy your code
   - `heroku ps:scale web=1` Ensure that at least one instance of the app is running
   - `heroku open` Open the app from the link from push logs or by shortcut
