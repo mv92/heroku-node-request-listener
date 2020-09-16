@@ -1,35 +1,18 @@
 const router = require('express').Router();
 
-const getCircularReplacer = require('../helpers/getCircularReplacer');
 const callback = (req, res, next) => {
-  const object = {
-    req: JSON.parse(JSON.stringify(req, getCircularReplacer())),
-    // res: JSON.parse(JSON.stringify(res, getCircularReplacer())),
+
+  const responseObject = {
+    headers: req.headers,
+    url: req.url,
+    method: req.method,
+    params: req.params,
+    query: req.query,
+    body: req.body,
   };
 
-  const {
-    req: {
-      headers,
-      url,
-      method,
-      params,
-      query,
-      body,
-    },
-  } = object;
-
-  if (headers.host.includes('localhost:')) {
-    console.log(object);
-  };
-
-  res.status(200).json({
-    headers,
-    url,
-    method,
-    params,
-    query,
-    body,
-  });
+  console.log(responseObject);
+  res.status(200).json(responseObject);
 };
 
 router.get('/:id*?/:action*?', callback);
